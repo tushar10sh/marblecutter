@@ -128,6 +128,8 @@ def apply(recipes, pixels, expand, source=None):
             data = data[0:3]
 
         if "linear_stretch" in recipes:
+            # Added by Tushar Shukla
+            # Add envi like property here to generate envi like browse tiles
             if recipes["linear_stretch"] == "global":
                 data = utils.linear_rescale(
                     data, in_range=(np.min(data), np.max(data)), out_range=(0.0, 1.0)
